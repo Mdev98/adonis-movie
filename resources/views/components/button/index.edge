@@ -1,0 +1,10 @@
+
+@if ($props.has('href'))
+    <a class="{{html.classNames([$props.class])}}" {{ $props.except(['class']).toAttrs()}}>
+        {{{ await $slots.main() }}}
+    </a>
+@else
+    <button class="{{html.classNames([$props.class])}}" {{ $props.except(['class']).toAttrs()}}>
+        {{{ await $slots.main() }}}
+    </button>
+@endif
